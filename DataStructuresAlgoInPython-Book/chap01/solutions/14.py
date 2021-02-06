@@ -3,16 +3,22 @@
 # product is odd.
 
 def oddProduct(nums):
-  for i in range(len(nums)):
-    for j in range(len(nums)):
-      if  i != j:
-        product = nums[i] * nums[j]
-        if product % 2 == 1:
-          return True
-          return False
+  odd_count = 0
+  for i in nums:
+    if i % 2 == 0:
+      continue
+    else:
+      odd_count += 1
+  
+  if odd_count >= 2:
+    return True
+  else:
+    return False
 
-res = oddProduct([1, 2, 4, 9, 8])
+res1 = oddProduct([1, 2, 4, 9, 8])
+res2 = oddProduct([1, 1, 4, 10, 8])
 
-print(res)
+print(res1)
+print(res2)
 
-# Output - True
+# Output - True, False

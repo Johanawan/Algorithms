@@ -5,7 +5,6 @@
 
 import random
 
-
 def create_typo(message, char_range):
     error_spot = random.randrange(0, len(message))
     error_character = random.choice(char_range)
@@ -13,9 +12,6 @@ def create_typo(message, char_range):
     incorrect_message[error_spot] = chr(error_character)
     return (''.join(incorrect_message))
     
-
-
-
 def spamalot(message, num_errors = 8, num_lines = 100):
     #find all the character values for Aa-Zz
     char_range = list(range(ord('A'), ord('Z')+1)) + list(range(ord('a'), ord('z')+1))
